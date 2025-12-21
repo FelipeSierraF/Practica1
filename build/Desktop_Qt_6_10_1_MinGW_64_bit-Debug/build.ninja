@@ -61,6 +61,12 @@ build CMakeFiles/Practica1.dir/auxiliares.cpp.obj: CXX_COMPILER__Practica1_unsca
   OBJECT_DIR = CMakeFiles\Practica1.dir
   OBJECT_FILE_DIR = CMakeFiles\Practica1.dir
 
+build CMakeFiles/Practica1.dir/ejercicios.cpp.obj: CXX_COMPILER__Practica1_unscanned_Debug C$:/Users/felip/Documents/Proyectos$ resueltos/Practica1/ejercicios.cpp || cmake_object_order_depends_target_Practica1
+  DEP_FILE = CMakeFiles\Practica1.dir\ejercicios.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Practica1.dir
+  OBJECT_FILE_DIR = CMakeFiles\Practica1.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Practica1
@@ -69,7 +75,7 @@ build CMakeFiles/Practica1.dir/auxiliares.cpp.obj: CXX_COMPILER__Practica1_unsca
 #############################################
 # Link the executable Practica1.exe
 
-build Practica1.exe: CXX_EXECUTABLE_LINKER__Practica1_Debug CMakeFiles/Practica1.dir/main.cpp.obj CMakeFiles/Practica1.dir/auxiliares.cpp.obj
+build Practica1.exe: CXX_EXECUTABLE_LINKER__Practica1_Debug CMakeFiles/Practica1.dir/main.cpp.obj CMakeFiles/Practica1.dir/auxiliares.cpp.obj CMakeFiles/Practica1.dir/ejercicios.cpp.obj
   FLAGS = -DQT_QML_DEBUG -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Practica1.dir
