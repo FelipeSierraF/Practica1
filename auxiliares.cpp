@@ -1,11 +1,13 @@
 #include "auxiliares.h"
 #include <iostream>
+#include <limits>
 #include <string>
 #include <cctype>
 
 void menu(){
     std::cout << "1.Ejercicio 1:\n";
     std::cout << "3.Ejercicio 3:\n";
+    std::cout << "5.Ejercicio 5:\n";
     std::cout << "0.Salir\n";
     std::cout << "Ingrese una de las siguientes opciones: ";
 }
@@ -17,6 +19,8 @@ bool validarEntrada(const std::string opcion){
     }
     return true;
 }
+
+
 
 int convertirEntero(std::string n){
     int numero = 0;
@@ -44,12 +48,19 @@ int validarEntero(){
 
 }
 
-char validarChar(){
-    char c;
-    std::cout << "Ingrese s para iniciar la ejecución o n para finalizar: ";
-    while (c =! 's' || c != 'n' | c != 'S' || c != 'N'){
-        std::cin >> c;
-        std::cout << "Opción invalida." << std::endl;
-        std::cout << "Ingrese s para iniciar la ejecución o n para finalizar: ";
+float leerFloatSeguro() {
+    float valor;
+    while (true) {
+        std::cout << "Ingrese un numero entero positivo: ";
+
+        if (std::cin >> valor) {
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            return valor;
+        } else {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Entrada inválida. Por favor ingrese un número.\n";
+        }
     }
 }
+

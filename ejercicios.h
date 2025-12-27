@@ -3,5 +3,7 @@
 
 void ejercicioUno();
 void ejercicioTres();
+void ejercicioCinco();
+
 
 #endif // EJERCICIOS_H

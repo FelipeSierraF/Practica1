@@ -1,58 +1,29 @@
-# =========================
-# Archivos generados por Qt / qmake
-# =========================
-*.pro.user
-*.pro.user.*
-*.qmake.stash
-*.autosave
-
-# =========================
-# Archivos de compilación
-# =========================
-*.o
-*.obj
-*.lo
-*.la
-*.a
-*.lib
-*.dll
-*.so
-*.dylib
-*.exe
-*.out
-*.app
-
-# =========================
-# Directorios de build (Qt Creator)
-# =========================
+# Build
+build/
 build-*/
-debug/
-release/
 
-# =========================
-# CMake (si usas CMake con Qt)
-# =========================
+# Qt Creator
+*.user
+*.user.*
+*.pro.user
+*.qbs.user
+*.qbs.user.*
+.qtcreator/
+
+# CMake / Make
 CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
 Makefile
-cmake-build-*/
 
-# =========================
-# Qt Creator
-# =========================
-*.qmlc
-*.jsc
+# Objetos y binarios
+*.o
+*.obj
+*.exe
+*.out
+*.app
 
-# =========================
-# IDEs
-# =========================
-.vscode/
-.idea/
-
-# =========================
-# Sistema operativo
-# =========================
+# OS
 .DS_Store
 Thumbs.db
-desktop.ini
+
