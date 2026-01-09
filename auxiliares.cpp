@@ -3,10 +3,13 @@
 #include <limits>
 #include <string>
 #include <cctype>
+#include <sstream>
 
 void menu(){
     std::cout << "1.Ejercicio 1:\n";
+    std::cout << "2.Problema 2:\n";
     std::cout << "3.Ejercicio 3:\n";
+    std::cout << "4.Problema 4:\n";
     std::cout << "5.Ejercicio 5:\n";
     std::cout << "7.Ejercicio 7:\n";
     std::cout << "9.Ejercicio 9:\n";
@@ -29,6 +32,30 @@ bool validarEntrada(const std::string opcion){
     for (char c:opcion){
         if(!std::isdigit(c)) return false;
     }
+    return true;
+}
+
+bool validarEntrada2(const std::string& n){
+    if(n.empty()) return false;
+    if(n.length() < 3 || n.length() > 4) return false;
+    for(char c : n) if(!isdigit(c)) return false;
+
+    std::string aux1, aux2;
+
+    if(n.length() == 4){
+        aux1 = n.substr(0,2);
+        aux2 = n.substr(2,2);
+    }
+    else if(n.length() == 3){
+        aux1 = n.substr(0,1);
+        aux2 = n.substr(1,2);
+    }
+
+    int h = stoi(aux1);
+    int m = stoi(aux2);
+
+    if(h > 23 || m > 59) return false;
+
     return true;
 }
 
@@ -157,6 +184,60 @@ std::string validarOpe(){
         }
     }
     std::cout << "Error: operacion invalida\n";
+}
+
+std::string validarStringIntN(){
+    std::string num;
+    std::cout << "Ingrese una hora: ";
+    std::getline(std::cin, num);
+    while(!validarEntrada2(num)){
+        std::cout << "Error:Debe ingresar un valor mayor a 4: ";
+        std::getline(std::cin, num);
+    }
+
+    return num;
+}
+
+std::string sumFe(const std::string& t1, const std::string& t2){
+    int h1 = 0, m1 = 0;
+    int h2 = 0, m2 = 0;
+
+    if(t1.length() == 4){
+        h1 = (t1[0]-'0')*10 + (t1[1]-'0');
+        m1 = (t1[2]-'0')*10 + (t1[3]-'0');
+    } else {
+        h1 = (t1[0]-'0');
+        m1 = (t1[1]-'0')*10 + (t1[2]-'0');
+    }
+
+    if(t2.length() == 4){
+        h2 = (t2[0]-'0')*10 + (t2[1]-'0');
+        m2 = (t2[2]-'0')*10 + (t2[3]-'0');
+    } else {
+        h2 = (t2[0]-'0');
+        m2 = (t2[1]-'0')*10 + (t2[2]-'0');
+    }
+
+    int m = m1 + m2;
+    int h = h1 + h2;
+
+    if(m >= 60){
+        m -= 60;
+        h++;
+    }
+
+    if(h >= 24) h -= 24;
+
+    std::string resultado;
+
+    if(h < 10) resultado += '0';
+    resultado += char((h/10) + '0');
+    resultado += char((h%10) + '0');
+
+    resultado += char((m/10)+'0');
+    resultado += char((m%10)+'0');
+
+    return resultado;
 }
 
 

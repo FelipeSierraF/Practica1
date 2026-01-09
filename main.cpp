@@ -23,8 +23,12 @@ int main()
         }
         if (opcion == "1"){
             ejercicioUno();
+        }else if(opcion == "2"){
+            problemaDos();
         }else if (opcion == "3"){
             ejercicioTres();
+        }else if(opcion == "4"){
+            problemaCuatro();
         }else if (opcion == "5"){
             ejercicioCinco();
         }else if(opcion == "7"){

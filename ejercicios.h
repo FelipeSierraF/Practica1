@@ -2,7 +2,9 @@
 #define EJERCICIOS_H
 
 void ejercicioUno();
+void problemaDos();
 void ejercicioTres();
+void problemaCuatro();
 void ejercicioCinco();
 void ejercicioSiete();
 void ejercicioNueve();

@@ -14,6 +14,49 @@ void ejercicioUno(){
     std::cout << std::endl;
 }
 
+void problemaDos(){
+    int cont = 0;
+    std::string cant;
+    int bm[10]{50000,20000,10000,5000,2000,1000,500,200,100,50};
+    int cifra = validarEntero();
+    int can = 0;
+    while(cifra >= 0){
+        if(bm[cont] <= cifra){
+            cifra = cifra - bm[cont];
+            can+=1;
+            if(bm[cont] > cifra){
+                cant = cant + std::to_string(can);
+                can = 0;
+                cont+=1;
+            }
+        }else if(cifra < 50){
+            cant = cant + "0";
+            break;
+        }else{
+            cant = cant + "0";
+            can = 0;
+            cont+=1;
+        }
+    }
+    if(cant.length() < 10){
+        for (int i = cont; i < 10; i ++){
+            cant+= "0";
+        }
+    }
+    for(int i = 0; i < 10; i++){
+        std::cout << bm[i] << ":" << cant[i] << std::endl;
+    }
+
+    std::cout << "Restante: " << cifra << std::endl;
+}
+
+void problemaCuatro(){
+    std::string num1 = validarStringIntN();
+    std::string num2 = validarStringIntN();
+    std::string result = sumFe(num1,num2);
+    std::cout << "La hora es: " << result << std::endl;
+}
+
 void ejercicioTres(){
     int A = validarEntero();
     int B = validarEntero();
