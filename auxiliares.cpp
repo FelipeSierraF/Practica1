@@ -11,11 +11,17 @@ void menu(){
     std::cout << "3.Ejercicio 3:\n";
     std::cout << "4.Problema 4:\n";
     std::cout << "5.Ejercicio 5:\n";
+    std::cout << "6.Problema 6:\n";
     std::cout << "7.Ejercicio 7:\n";
+    std::cout << "8.Problema 8:\n";
     std::cout << "9.Ejercicio 9:\n";
+    std::cout << "10.Problema 10:\n";
     std::cout << "11.Ejercicio 11:\n";
+    std::cout << "12.Problema 12:\n";
     std::cout << "13.Ejercicio 13:\n";
+    std::cout << "14.Problema 14:\n";
     std::cout << "15.Ejercicio 15:\n";
+    std::cout << "16.Problema 16:\n";
     std::cout << "17.Ejercicio 17:\n";
     std::cout << "19.Ejercicio 19:\n";
     std::cout << "21.Ejercicio 21:\n";
@@ -240,7 +246,15 @@ std::string sumFe(const std::string& t1, const std::string& t2){
     return resultado;
 }
 
-
+bool validarPalindroma(int r){
+    std::string n = std::to_string(r);
+    std::string aux;
+    for (int i = n.length(); i > 0; i--){
+        aux = aux + n[i];
+    }
+    if(n == aux)return true;
+    return false;
+}
 
 
 

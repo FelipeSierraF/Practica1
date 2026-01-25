@@ -31,16 +31,28 @@ int main()
             problemaCuatro();
         }else if (opcion == "5"){
             ejercicioCinco();
+        }else if (opcion == "6"){
+            problemaSeis();
         }else if(opcion == "7"){
             ejercicioSiete();
+        }else if (opcion == "8"){
+            problemaOcho();
         }else if(opcion == "9") {
             ejercicioNueve();
+        }else if(opcion == "10"){
+            problemaDiez();
         }else if(opcion == "11"){
             ejercicioOnce();
+        }else if(opcion == "12"){
+            problemaDoce();
         }else if(opcion == "13"){
             ejercicioTrece();
+        }else if(opcion == "14"){
+            problemaCatorce();
         }else if(opcion == "15"){
             ejercicioQince();
+        }else if(opcion == "16"){
+            problemaDieciseis();
         }else if(opcion == "17"){
             ejercicioDiecisiete();
         }else if(opcion == "19"){

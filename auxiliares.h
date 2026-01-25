@@ -14,4 +14,5 @@ std::string validarOperador();
 std::string validarOpe();
 std::string validarStringIntN();
 std::string sumFe(const std::string& t1,const std::string& t2);
+bool validarPalindroma(int r);
 #endif // AUXILIARES_H

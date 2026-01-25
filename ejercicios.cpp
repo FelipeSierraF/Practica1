@@ -66,6 +66,18 @@ void ejercicioTres(){
     std::cout << std::endl;
 }
 
+void problemaSeis(){
+    int num = validarEntero();
+    double result = 1.0;
+    double facto = 1.0;
+    for (int i = 1; i < num; i++){
+        facto *= i;
+        result += 1.0 / facto;
+    }
+
+    std::cout << "El resultado de e es: " << result << std::endl;
+}
+
 void ejercicioCinco(){
     int A = validarEntero();
     int B = validarEntero();
@@ -83,6 +95,51 @@ void ejercicioSiete(){
 
 }
 
+void problemaOcho(){
+    int a = validarEntero();
+    int b = validarEntero();
+    int c = validarEntero();
+    bool bandera = false;
+    long long resul = 0;
+    long long cont = 1;
+
+    if(a != b){
+        std::cout << a*cont;
+        resul = resul + (a * cont);
+        cont+=1;
+        while((a*cont) < c){
+            std::cout << " + " << a*cont;
+            resul = resul + (a * cont);
+            cont+=1;
+        }
+
+        cont = 1;
+
+        while ((b*cont) < c){
+            if(((b*cont) % a) != 0){
+                std::cout << " + " << b * cont;
+                resul = resul + (b * cont);
+                cont+=1;
+            }else{
+                cont+=1;
+                continue;
+            }
+        }
+        std::cout << " = " << resul << std::endl;
+
+    }else{
+        std::cout << a*cont;
+        resul = resul + (a * cont);
+        cont+=1;
+        while((a*cont) < c){
+            std::cout << " + " << a*cont;
+            resul = resul + (a * cont);
+            cont+=1;
+        }
+        std::cout << (a * cont) << " = " << resul << std::endl;
+    }
+}
+
 void ejercicioNueve(){
     int N = validarEntero();
     float perimetro,area;
@@ -90,6 +147,33 @@ void ejercicioNueve(){
     area = 3.1416 * N*N;
     std::cout << "El perimetro del circulo ede radio: "<< N << " es:" << perimetro << std::endl;
     std::cout << "El area del circulo de radio: " << N << " es: " << area << std::endl;
+}
+
+void problemaDiez(){
+    int n = validarEntero();
+    int aux = 0;
+    int aux2 = 0;
+    int primo = 0;
+    if (n == 0) std::cout << "No existe valor para 0." << std::endl;
+    else{
+        for(int i = 2; aux2 < n; i++){
+            for(int j = 1; j <= i; j++){
+                if((i % j) == 0){
+                    aux+=1;
+                    if(aux > 2) break;
+                }
+            }
+            if(aux == 2){
+                primo = i;
+                aux2 = aux2 + 1;
+                aux = 0;
+            }else{
+                aux = 0;
+            }
+        }
+
+        std::cout << "El primo numero " << n << " es: " << primo << std::endl;
+    }
 }
 
 void ejercicioOnce(){
@@ -102,6 +186,20 @@ void ejercicioOnce(){
     }
 }
 
+void problemaDoce(){
+    int num = validarEntero();
+    int max = num;
+    int cont = 2;
+    while(max > 1){
+        if(max % cont == 0){
+            max = max / cont;
+        }else{
+            cont+= 1;
+        }
+    }
+    std::cout << "El mayor factor primo de " << num << " es " << cont << std::endl;
+}
+
 void ejercicioTrece(){
     int N = validarEntero();
     int result = 0;
@@ -110,6 +208,32 @@ void ejercicioTrece(){
             std::cout << i << std::endl;
         }
     }
+}
+
+void problemaCatorce(){
+    int num1 = 100;
+    int num2 = 100;
+    int result = 0;
+    int resultF = 0;
+    int numM1 = 0;
+    int numM2 = 0;
+    while(num1 < 1000){
+        result = num1 * num2;
+        num2 +=1;
+        if(validarPalindroma(result)){
+            if(resultF < result){
+                resultF = result;
+                numM1 = num1;
+                numM2 = num2;
+            }
+        }
+        if (num2 == 999){
+            num2 = 100;
+            num1 +=1;
+        }
+    }
+
+    std::cout << numM1 << " x " << numM2 << std::endl;
 }
 
 void ejercicioQince(){
@@ -123,6 +247,31 @@ void ejercicioQince(){
         }
     }
     std::cout << "El resultado de la suma de los valores ingresados es: " << suma << std::endl;
+}
+
+void problemaDieciseis(){
+    int num = validarEntero();
+    int n = 0;
+    int cont = 1;
+    int aux = 1;
+    int aux2 = 1;
+    for (int i = 1; i < num; i++){
+        n = i;
+        cont = 1;
+        while(n != 1){
+            if(n % 2 == 0){
+                n = n/2;
+            }else{
+                n = (3*n) + 1;
+            }
+            cont+=1;
+        }
+        if(cont > aux){
+            aux = cont;
+            aux2 = i;
+        }
+    }
+    std::cout << "La serie mas larga es con la semilla: " << aux2 << " y tiene " << aux << " terminos." <<std::endl;
 }
 
 void ejercicioDiecisiete(){
